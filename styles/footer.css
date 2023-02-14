@@ -43,9 +43,13 @@ footer h4 {
 
 .info-container span {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 4px;
+}
+
+.info-container span:last-child {
+    justify-content: center;
 }
 
 .info-container span a img {
@@ -64,15 +68,15 @@ footer h4 {
     font-size: 1.5rem;
 }
 
-.primary-navigation a {
+.primary-navigation.footer a {
     color: #fff;
     opacity: 75%;
     font-weight: 400;
 }
 
-.primary-navigation a:hover {
+.primary-navigation.footer a:hover {
     color: #fff;
-    font-weight: 700;
+    border-bottom: 2.5px solid var(--red-900);
     opacity: 100%;
 }
 
