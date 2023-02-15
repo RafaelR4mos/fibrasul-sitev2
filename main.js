@@ -2,6 +2,9 @@ import "./styles/index.css";
 
 const primaryNav = document.querySelector(".primary-navigation");
 const navToggle = document.querySelector(".mobile-nav-toggle");
+const mobileNavToggleBtnIcon = document.querySelector(
+    "#mobile-only-toggle-btn-icon"
+);
 
 //Main carousel elements
 const mainCarouselBtn = document.querySelector(".carousel-btn");
@@ -22,7 +25,8 @@ const mainCarouselBulletNavParents = document.querySelector(
 );
 
 const header = document.querySelector(".primary-header");
-const headerHeight = header.offsetHeight + 16;
+const headerHeight = header.offsetHeight + 32;
+console.log(headerHeight);
 
 let resizeTimer;
 var portfolioSectionIndex = 0;
@@ -85,9 +89,11 @@ navToggle.addEventListener("click", () => {
     if (visibility === "false") {
         primaryNav.setAttribute("data-visible", true);
         navToggle.setAttribute("aria-expanded", true);
+        mobileNavToggleBtnIcon.src = "./assets/mobile-menu-close.svg";
     } else if (visibility === "true") {
         primaryNav.setAttribute("data-visible", false);
         navToggle.setAttribute("aria-expanded", false);
+        mobileNavToggleBtnIcon.src = "./assets/mobile-menu.svg";
     }
 });
 

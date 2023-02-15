@@ -93,8 +93,8 @@ span {
     font-size: 1.125rem;
 }
 
-#cards-btn,
-#partners-btn {
+.card-btn,
+.partner-btn {
     display: none;
 }
 
@@ -140,7 +140,7 @@ span {
     padding: 0 5rem 11rem;
 }
 
-@media (max-width: 81.25rem) {
+@media (max-width: 87.5rem) {
     html {
         font-size: 80%;
     }
@@ -160,12 +160,6 @@ span {
         display: none;
     }
 
-    .footer-container {
-        margin: 1rem;
-        gap: 1rem 2.5rem;
-        align-items: flex-start;
-    }
-
     .footer-links {
         display: none;
     }
@@ -174,12 +168,6 @@ span {
     .team-header span,
     .team-header span strong {
         font-size: 12px;
-    }
-}
-
-@media (max-width: 768px) {
-    #cards-section {
-        margin-top: 5rem;
     }
 }
 

@@ -5,8 +5,10 @@
     flex-direction: column;
 }
 
-#partners-section > h3 {
+#partners-section > span {
+    font-size: 1.75rem;
     color: var(--red-900);
+    font-weight: 700;
 }
 
 #partners-section > h1 {
