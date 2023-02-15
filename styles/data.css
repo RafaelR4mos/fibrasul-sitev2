@@ -11,12 +11,15 @@
     align-items: center;
 }
 
-.data-header h3 {
-    color: var(--neutral-600);
+.data-header span {
+    color: var(--zinc-400);
+    font-weight: 700;
+    font-size: 1.75rem;
 }
 
 .data-header h2 {
     color: var(--gray-200);
+    font-weight: 700;
 }
 
 .data-header img {
