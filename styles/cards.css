@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
 .card-subtitle {
@@ -30,12 +31,12 @@
 }
 
 .cards-container {
-    margin: 4rem 0;
     display: flex;
     flex-wrap: wrap;
     gap: 2.25rem;
     flex: 1;
     justify-content: center;
+    align-items: center;
 }
 
 .card:nth-child(even) {

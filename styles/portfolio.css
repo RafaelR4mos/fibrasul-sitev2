@@ -3,9 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    /* Seção desabilitada para a 1a entrega */
-    display: none;
+    height: 100vh;
 }
 
 #portfolio-section > h3 {
@@ -23,15 +21,16 @@
 
 .carousel {
     background: var(--neutral-800);
-    height: 45rem;
     position: relative;
     overflow: hidden;
 }
 
 .slider {
+    --slider-percent: 400%;
+
     height: 100%;
     display: flex;
-    width: 400%;
+    width: var(--slider-percent);
     transition: all ease-in;
     transition-duration: 0.7s;
 }
@@ -73,7 +72,7 @@
 
 .controls ul {
     position: absolute;
-    bottom: 0.65rem;
+    bottom: 1.5rem;
     left: 50%;
     transform: translateX(-50%);
     list-style: none;
@@ -103,12 +102,13 @@
 /* sections stilization */
 .slider > section {
     height: auto;
-    width: auto;
+    width: fit-content;
     padding: 0.625rem 5rem 0;
     color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: 90vh;
 }
 
 .service-header {
