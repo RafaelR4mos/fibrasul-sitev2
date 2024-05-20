@@ -50,6 +50,21 @@ footer h2 {
     font-weight: 500;
 }
 
+.info-detail {
+    color: var(--gray-200);
+    font-weight: 500;
+}
+
+.info-detail.wpp {
+    filter: brightness(0) invert(1);
+    width: 2rem;
+    transform: scale(1.1);
+}
+
+.info-detail.linkedin {
+    font-size: 2rem;
+}
+
 .info-container span:last-child {
     justify-content: center;
 }
