@@ -1,960 +1,772 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="description" content="FibrasulRS manutenções industriais" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Fibrasul Site</title>
-        <link rel="icon" href="data:image/png;base64,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" />
-      <script type="module" crossorigin src="/assets/index.js"></script>
-      <link rel="stylesheet" href="/assets/index.css">
-    </head>
-    <body>
-        <header class="primary-header">
-            <div>
-                <a href="#carousel-section"
-                    ><img
-                        src="/assets/fibrasul-logo.png"
-                        alt="logo da empresa fibrasul no cabeçalho do site"
-                /></a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="FibrasulRS manutenções industriais" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fibrasul Site</title>
+    <link rel="icon" href="data:image/png;base64,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" />
+    <script type="module" crossorigin src="/assets/index.js"></script>
+    <link rel="stylesheet" href="/assets/index.css">
+  </head>
+  <body>
+    <header class="primary-header">
+      <div>
+        <a href="#carousel-section"
+          ><img
+            src="/assets/fibrasul-logo.png"
+            alt="logo da empresa fibrasul no cabeçalho do site"
+        /></a>
+      </div>
+
+      <button
+        class="mobile-nav-toggle"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+        aria-label="menu de navegação"
+      >
+        <img
+          id="mobile-only-toggle-btn-icon"
+          src="/assets/mobile-menu.svg"
+          class="mobile-only"
+          alt="ícone hamburguer, menu colapsável"
+        />
+        <span class="sr-only">Menu</span>
+      </button>
+
+      <nav>
+        <ul
+          id="primary-navigation"
+          class="primary-navigation flex"
+          data-visible="false"
+        >
+          <li>
+            <a href="#">Início</a>
+          </li>
+
+          <li>
+            <a href="#cards-section">Serviços</a>
+          </li>
+
+          <li class="portfolio-link">
+            <a href="#portfolio-section">Portfolio</a>
+          </li>
+
+          <li>
+            <a href="#transparency-section">Transparência</a>
+          </li>
+
+          <li>
+            <a href="#data-section">Equipe</a>
+          </li>
+
+          <li>
+            <a href="#contacts-section">Contato</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section id="carousel-section">
+        <div class="main-carousel-container">
+          <div class="main-carousel">
+            <div class="main-carousel-slider">
+              <section class="section">
+                <div>
+                  <img src="/assets/fibra.webp" alt="" />
+                </div>
+              </section>
+
+              <section class="section">
+                <div>
+                  <img src="/assets/caldeiraria.webp" alt="" />
+                </div>
+              </section>
+
+              <section class="section">
+                <div>
+                  <img src="/assets/team.webp" alt="" />
+                </div>
+              </section>
+
+              <section class="section">
+                <div>
+                  <img src="/assets/gestao.webp" alt="" />
+                </div>
+              </section>
             </div>
-
-            <button
-                class="mobile-nav-toggle"
-                aria-controls="primary-navigation"
-                aria-expanded="false"
-            >
-                <img
-                    id="mobile-only-toggle-btn-icon"
-                    src="/assets/mobile-menu.svg"
-                    class="mobile-only"
-                    alt=""
-                />
-                <span class="sr-only">Menu</span>
-            </button>
-
-            <nav>
-                <ul
-                    id="primary-navigation"
-                    class="primary-navigation flex"
-                    data-visible="false"
+            <div class="main-carousel-controls">
+              <button class="carousel-btn">
+                <ion-icon
+                  class="arrow-right"
+                  name="chevron-forward-outline"
+                  aria-label="Icone de seta utilizado para avançar uma posição no carrosel"
                 >
-                    <li>
-                        <a href="#">Início</a>
-                    </li>
+                </ion-icon>
+              </button>
 
-                    <li>
-                        <a href="#cards-section">Serviços</a>
-                    </li>
+              <ul class="main-carousel-bullet-nav">
+                <li class="selected"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                    <li class="portfolio-link">
-                        <a href="#portfolio-section">Portfolio</a>
-                    </li>
+      <section id="cards-section">
+        <h1>O que podemos fazer por você?</h1>
+        <span class="card-subtitle">
+          escolha qualidade e segurança,
+          <strong>escolha Fibrasul!</strong>
+        </span>
 
-                    <li>
-                        <a href="#data-section">Equipe</a>
-                    </li>
+        <div class="cards-container-title">
+          <h2>Principais Serviços</h2>
+          <div class="title-underline"></div>
+        </div>
 
-                    <li>
-                        <a href="#contacts-section">Contato</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+        <div class="cards-container">
+          <div class="card">
+            <div class="card-title">
+              <h3>Laminação</h3>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Voluptates ut adipisci officiis temporibus necessitatibus
+              voluptas, corporis numquam quasi quo ex vero autem culpa,
+              consequuntur maiores eius suscipit nam. Optio, ipsum.
+            </p>
+          </div>
+        </div>
+        <button class="card-btn" id="cards-btn">Saiba Mais</button>
+      </section>
 
-        <main class="main">
-            <section id="carousel-section">
-                <div class="main-carousel-container">
-                    <div class="main-carousel">
-                        <div class="main-carousel-slider">
-                            <section class="section">
-                                <div>
-                                    <img
-                                        src="/assets/fibra.webp"
-                                        alt=""
-                                    />
-                                </div>
-                            </section>
+      <section id="portfolio-section">
+        <h3>Portfólio</h3>
+        <h2>Confira o que já fizemos pelas empresas</h2>
 
-                            <section class="section">
-                                <div>
-                                    <img
-                                        src="/assets/caldeiraria.webp"
-                                        alt=""
-                                    />
-                                </div>
-                            </section>
-
-                            <section class="section">
-                                <div>
-                                    <img
-                                        src="/assets/team.webp"
-                                        alt=""
-                                    />
-                                </div>
-                            </section>
-
-                            <section class="section">
-                                <div>
-                                    <img
-                                        src="/assets/gestao.webp"
-                                        alt=""
-                                    />
-                                </div>
-                            </section>
-                        </div>
-                        <div class="main-carousel-controls">
-                            <button class="carousel-btn">
-                                <ion-icon
-                                    class="arrow-right"
-                                    name="chevron-forward-outline"
-                                    aria-label="Icone de seta utilizado para avançar uma posição no carrosel"
-                                >
-                                </ion-icon>
-                            </button>
-
-                            <ul class="main-carousel-bullet-nav">
-                                <li class="selected"></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </ul>
-                        </div>
-                    </div>
+        <div class="container">
+          <div class="carousel">
+            <div class="slider">
+              <section id="section-one">
+                <div class="service-header">
+                  <h2>Titulo do Serviço</h2>
+                  <span>20/12/2022 à 30/12/2022</span>
                 </div>
-            </section>
-
-            <section id="cards-section">
-                <h1>O que podemos fazer por você?</h1>
-                <span class="card-subtitle">
-                    escolha qualidade e segurança,
-                    <strong>escolha Fibrasul!</strong>
-                </span>
-
-                <div class="cards-container-title">
-                    <h2>Principais Serviços</h2>
-                    <div class="title-underline"></div>
-                </div>
-
-                <div class="cards-container">
-                    <div class="card">
-                        <div class="card-title">
-                            <h3>Laminação</h3>
-                        </div>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Voluptates ut adipisci officiis temporibus
-                            necessitatibus voluptas, corporis numquam quasi quo
-                            ex vero autem culpa, consequuntur maiores eius
-                            suscipit nam. Optio, ipsum.
-                        </p>
+                <div class="service-body">
+                  <div class="service-picture-container">
+                    <div class="after-before-pic">
+                      <span>Antes</span>
+                      <img src="" alt="image" />
+                      <span>Descrição da imagem</span>
                     </div>
-                </div>
-                <button class="card-btn" id="cards-btn">Saiba Mais</button>
-            </section>
-
-            <section id="portfolio-section">
-                <h3>Portfólio</h3>
-                <h2>Confira o que já fizemos pelas empresas</h2>
-
-                <div class="container">
-                    <div class="carousel">
-                        <div class="slider">
-                            <section id="section-one">
-                                <div class="service-header">
-                                    <h2>Titulo do Serviço</h2>
-                                    <span>20/12/2022 à 30/12/2022</span>
-                                </div>
-                                <div class="service-body">
-                                    <div class="service-picture-container">
-                                        <div class="after-before-pic">
-                                            <span>Antes</span>
-                                            <img src="" alt="image" />
-                                            <span>Descrição da imagem</span>
-                                        </div>
-                                        <div class="after-before-pic">
-                                            <span>Depois</span>
-                                            <img src="" alt="image" />
-                                            <span>Descrição da imagem</span>
-                                        </div>
-                                    </div>
-                                    <div class="service-info-container">
-                                        <h3>Descrição</h3>
-                                        <p>
-                                            Lorem ipsum dolor, sit amet
-                                            consectetur adipisicing elit.
-                                            Inventore, temporibus provident ab
-                                            distinctio vitae nemo omnis
-                                            dignissim os maiores dolores enim
-                                            magni. Quos molestiae itaque
-                                            corporis autem recusandae. Eius,
-                                            laborum tenetur. Lorem ipsum dolor,
-                                            sit amet consectetur adipisicing
-                                            elit. Inventore, temporibus
-                                            provident ab distinctio vitae nemo
-                                            omnis dignissim os maiores dolores
-                                            enim magni. Quos molestiae itaque
-                                            corporis autem recusandae. Eius,
-                                            laborum tenetur.
-                                        </p>
-                                        <div class="scope-objectives">
-                                            <h3>Objetivos do Escopo</h3>
-                                            <ul>
-                                                <li>
-                                                    Lorem Ipsum has been the
-                                                    industry's standard dummy
-                                                    text ever since the 1500s.
-                                                </li>
-                                                <li>
-                                                    Lorem Ipsum has been the
-                                                    industry's standard dummy
-                                                    text ever since the 1500s,
-                                                    Lorem Ipsum has been the
-                                                    industry's standard dummy
-                                                    text ever since the 1500s.
-                                                </li>
-                                                <li>
-                                                    Lorem Ipsum has been the
-                                                    industry's standard dummy
-                                                    text ever since the 1500s.
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="services-partners">
-                                            <div class="hirer">
-                                                <span>Contratante</span>
-                                                <img
-                                                    src="/assets/cmpc.png"
-                                                    alt="cmpc logo"
-                                                />
-                                            </div>
-                                            <div class="partners-container">
-                                                <span>Parceiras</span>
-                                                <img
-                                                    src="/assets/cmpc.png"
-                                                    alt="cmpc logo"
-                                                />
-                                                <img
-                                                    src="/assets/cmpc.png"
-                                                    alt="cmpc logo"
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <section id="section-two">
-                                <div class="service-header">
-                                    <h2>Titulo do Serviço</h2>
-                                    <span>20/12/2022 à 30/12/2022</span>
-                                </div>
-                                <div class="service-body">
-                                    <div class="service-picture-container">
-                                        <div class="after-before-pic">
-                                            <span>Antes</span>
-                                            <img src="" alt="image" />
-                                            <span>Descrição da imagem</span>
-                                        </div>
-                                        <div class="after-before-pic">
-                                            <span>Depois</span>
-                                            <img src="" alt="image" />
-                                            <span>Descrição da imagem</span>
-                                        </div>
-                                    </div>
-                                    <div class="service-info-container">
-                                        <h3>Descrição</h3>
-                                        <p>
-                                            Lorem ipsum dolor, sit amet
-                                            consectetur adipisicing elit.
-                                            Inventore, temporibus provident ab
-                                            distinctio vitae nemo omnis
-                                            dignissim os maiores dolores enim
-                                            magni. Quos molestiae itaque
-                                            corporis autem recusandae. Eius,
-                                            laborum tenetur. Lorem ipsum dolor,
-                                            sit amet consectetur adipisicing
-                                            elit. Inventore, temporibus
-                                            provident ab distinctio vitae nemo
-                                            omnis dignissim os maiores dolores
-                                            enim magni. Quos molestiae itaque
-                                            corporis autem recusandae. Eius,
-                                            laborum tenetur.
-                                        </p>
-                                        <div class="scope-objectives">
-                                            <h3>Objetivos do Escopo</h3>
-                                            <ul>
-                                                <li>
-                                                    Lorem Ipsum has been the
-                                                    industry's standard dummy
-                                                    text ever since the 1500s.
-                                                </li>
-                                                <li>
-                                                    Lorem Ipsum has been the
-                                                    industry's standard dummy
-                                                    text ever since the 1500s,
-                                                    Lorem Ipsum has been the
-                                                    industry's standard dummy
-                                                    text ever since the 1500s.
-                                                </li>
-                                                <li>
-                                                    Lorem Ipsum has been the
-                                                    industry's standard dummy
-                                                    text ever since the 1500s.
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="services-partners">
-                                            <div class="hirer">
-                                                <span>Contratante</span>
-                                                <img
-                                                    src="/assets/cmpc.png"
-                                                    alt="cmpc logo"
-                                                />
-                                            </div>
-                                            <div class="partners-container">
-                                                <span>Parceiras</span>
-                                                <img
-                                                    src="/assets/cmpc.png"
-                                                    alt="cmpc logo"
-                                                />
-                                                <img
-                                                    src="/assets/cmpc.png"
-                                                    alt="cmpc logo"
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <section id="section-three">
-                                <div class="service-header">
-                                    <h2>Titulo do Serviço</h2>
-                                    <span>20/12/2022 à 30/12/2022</span>
-                                </div>
-                                <div class="service-body">
-                                    <div class="service-picture-container">
-                                        <div class="after-before-pic">
-                                            <span>Antes</span>
-                                            <img src="" alt="image" />
-                                            <span>Descrição da imagem</span>
-                                        </div>
-                                        <div class="after-before-pic">
-                                            <span>Depois</span>
-                                            <img src="" alt="image" />
-                                            <span>Descrição da imagem</span>
-                                        </div>
-                                    </div>
-                                    <div class="service-info-container">
-                                        <h3>Descrição</h3>
-                                        <p>
-                                            Lorem ipsum dolor, sit amet
-                                            consectetur adipisicing elit.
-                                            Inventore, temporibus provident ab
-                                            distinctio vitae nemo omnis
-                                            dignissim os maiores dolores enim
-                                            magni. Quos molestiae itaque
-                                            corporis autem recusandae. Eius,
-                                            laborum tenetur. Lorem ipsum dolor,
-                                            sit amet consectetur adipisicing
-                                            elit. Inventore, temporibus
-                                            provident ab distinctio vitae nemo
-                                            omnis dignissim os maiores dolores
-                                            enim magni. Quos molestiae itaque
-                                            corporis autem recusandae. Eius,
-                                            laborum tenetur.
-                                        </p>
-                                        <div class="scope-objectives">
-                                            <h3>Objetivos do Escopo</h3>
-                                            <ul>
-                                                <li>
-                                                    Lorem Ipsum has been the
-                                                    industry's standard dummy
-                                                    text ever since the 1500s.
-                                                </li>
-                                                <li>
-                                                    Lorem Ipsum has been the
-                                                    industry's standard dummy
-                                                    text ever since the 1500s,
-                                                    Lorem Ipsum has been the
-                                                    industry's standard dummy
-                                                    text ever since the 1500s.
-                                                </li>
-                                                <li>
-                                                    Lorem Ipsum has been the
-                                                    industry's standard dummy
-                                                    text ever since the 1500s.
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="services-partners">
-                                            <div class="hirer">
-                                                <span>Contratante</span>
-                                                <img
-                                                    src="/assets/cmpc.png"
-                                                    alt="cmpc logo"
-                                                />
-                                            </div>
-                                            <div class="partners-container">
-                                                <span>Parceiras</span>
-                                                <img
-                                                    src="/assets/cmpc.png"
-                                                    alt="cmpc logo"
-                                                />
-                                                <img
-                                                    src="/assets/cmpc.png"
-                                                    alt="cmpc logo"
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <section id="section-four">
-                                <div class="service-header">
-                                    <h2>Titulo do Serviço</h2>
-                                    <span>20/12/2022 à 30/12/2022</span>
-                                </div>
-                                <div class="service-body">
-                                    <div class="service-picture-container">
-                                        <div class="after-before-pic">
-                                            <span>Antes</span>
-                                            <img src="" alt="image" />
-                                            <span>Descrição da imagem</span>
-                                        </div>
-                                        <div class="after-before-pic">
-                                            <span>Depois</span>
-                                            <img src="" alt="image" />
-                                            <span>Descrição da imagem</span>
-                                        </div>
-                                    </div>
-                                    <div class="service-info-container">
-                                        <h3>Descrição</h3>
-                                        <p>
-                                            Lorem ipsum dolor, sit amet
-                                            consectetur adipisicing elit.
-                                            Inventore, temporibus provident ab
-                                            distinctio vitae nemo omnis
-                                            dignissim os maiores dolores enim
-                                            magni. Quos molestiae itaque
-                                            corporis autem recusandae. Eius,
-                                            laborum tenetur. Lorem ipsum dolor,
-                                            sit amet consectetur adipisicing
-                                            elit. Inventore, temporibus
-                                            provident ab distinctio vitae nemo
-                                            omnis dignissim os maiores dolores
-                                            enim magni. Quos molestiae itaque
-                                            corporis autem recusandae. Eius,
-                                            laborum tenetur.
-                                        </p>
-
-                                        <div class="scope-objectives">
-                                            <h3>Objetivos do Escopo</h3>
-                                            <ul>
-                                                <li>
-                                                    Lorem Ipsum has been the
-                                                    industry's standard dummy
-                                                    text ever since the 1500s.
-                                                </li>
-                                                <li>
-                                                    Lorem Ipsum has been the
-                                                    industry's standard dummy
-                                                    text ever since the 1500s,
-                                                    Lorem Ipsum has been the
-                                                    industry's standard dummy
-                                                    text ever since the 1500s.
-                                                </li>
-                                                <li>
-                                                    Lorem Ipsum has been the
-                                                    industry's standard dummy
-                                                    text ever since the 1500s.
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="services-partners">
-                                            <div class="hirer">
-                                                <span>Contratante</span>
-                                                <img
-                                                    src="/assets/cmpc.png"
-                                                    alt="cmpc logo"
-                                                />
-                                            </div>
-                                            <div class="partners-container">
-                                                <span>Parceiras</span>
-                                                <img
-                                                    src="/assets/cmpc.png"
-                                                    alt="cmpc logo"
-                                                />
-                                                <img
-                                                    src="/assets/cmpc.png"
-                                                    alt="cmpc logo"
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                        </div>
-                        <div class="controls">
-                            <button class="portfolio-btn">
-                                <ion-icon
-                                    class="arrow-right"
-                                    name="chevron-forward-outline"
-                                    aria-label="Icone de seta utilizado para avançar uma posição no carrosel"
-                                >
-                                </ion-icon>
-                            </button>
-
-                            <ul class="portfolio-bullet-nav">
-                                <li class="selected"></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </ul>
-                        </div>
+                    <div class="after-before-pic">
+                      <span>Depois</span>
+                      <img src="" alt="image" />
+                      <span>Descrição da imagem</span>
                     </div>
-                </div>
-            </section>
-
-            <section id="partners-section">
-                <span>Escolha você também!</span>
-                <h2>Clientes e parceiros que já escolheram a fibrasul</h2>
-
-                <div class="partners-galery-container">
-                    <div class="partners">
-                        <img
-                            src="/assets/cmpc.png"
-                            alt="logo da empresa cmpc com cores cinza e letras representando a marca juntamente d e um icone verde ao lado das letras."
-                        />
-                    </div>
-                    <div class="partners">
-                        <img
-                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALkAAABvCAMAAACHFJFcAAAApVBMVEUAAAD0Zxb6ZhT3aBf1ZhbyZRfqYRD2ZBPvZRD0Zxb1Zxb1Zhb0YiXzZhf0Zxb1Zxb1Zxf1aBf1Zxb1aBL1Zxb1ZxbzZxb3aRr0Zhb0Zxf1Zxb1Zxf1Zxb0Zxb0Zhb0ZhjxYRT1Zxf1Zxb0Zhf0Zxb0Zxb1Zxf0Zxf0Zxb0Zhb1Zxb0Zxf0Zhb0Zxb0Zxb1Zxf0ZxX1Zxb0Zxb1Zxb0Zxb0Zhf0ZxcbgsV4AAAANnRSTlMARTIg+TUSHRXlTyYGr/H99eosD/qCQQnNv7TddmxlGQzim1+jSvfpxbqoijmV1sl8clPRkFnyx8YVAAAElklEQVR42u3Y25KiMBAG4F8ZBQXUAcUDHvA4jqOu47h5/0fbKodKx0DCurUXu1X93REJpEinOxGMMcYYY4wxxhhjjDHGGGOM/duata2P/1BzFU4/V5MEVWI3qhs4QJOuTLeArmLcZbIhgsJRet0F1DMDcsPDOvJ9zwmPFeP+PPeFyQC4CbtP4CgvdvnLPmXLCoqW8uC75KFnbjZAeJmGV3ffhIV7FmZdF82lsOq4QCivRsH3p/ySLT7IVkj5Nz/Ihh8BkBtnCANEJ5wSmHlfwmIMzITdBIg68uqCu8ZO5EZQbOR9e9wtWurU5ZrvQDi9bK6Yz2D2IWzWCMbCbq2GRi//wgPZor7baym97tY0dTQ38RgIG7cpMFvDyH2zRoIDfyesehkwok+ZT3kqf45AfhbGOVFml0wchEFz4mJTh9G8KhKmwi4EHCFN82BRo4IclF53fqd0btonbAIkg+gdZj+EzU9aaiZtNeD6Hu5WsmUO4tA4G7i7Uc8YituHB6A2dmHk96nvS0HqodGRV13KOA+3ZF80R/kSk8Hy5pbOb5oH9PlxEsh6sllNbovfWp/7pFHgAx5djWiA1OioKVlc89kuH9Bez0A1+hZtaFxnCIvFm7IW7dTUVwNRQ6OVBwul9y2IL1tfIj1JLpt4zk9lnqtMaYABFN5SL5fOqwyWIciA8kghmZ/wpFBZSVVGhtdsaank9Ztq18Eji5GegdpdwyxWa/ZoWpuqGAUN+Zp+AtVBaOVySPmq96roUzLXv9s5g0F1Mu+0VOl+NgQM0Zw+/JT19JR87Aq7PEvHL7LlhifZCnv4OPTF68Muj8wLdfEkKqwpqHI+nkGZpagY+WuKgDpU7/oi91Jh14n17zbGkxx75TcMcA+V09M/ZVtU2ORJsqeU6ie5PWExgmLRfYhmMi2k5FBUqOlJMo3xpGBUsTUnn8pZw7DvOeSZpSPslp7+8g2e1t4Js0H5Wn6Hqq7kVX1BdF9IX+jV4EjvTvC868g49pcjSNSTw1lDNRB6uZzIO+cuue70avBBkxDgDwT1bVtFz/sKSgd4drXKr6VktyPv1Cq/9lyq/B/4G65KhSbDlF5jSOb9wpn/Zj3zb6lnA3/DQSkrJOnLEIgMuXL0/YUDWrF1EGU7mz93o5/5q1XXpuJCPNFcQ+X3Cmf+vgwWKA6FctVSJvc5mVPCP5RW0ODN8Bqq37tIj+cLiPKXTVsPs+7WKWPbmVv1m/pc00me7AuFNS3dI7Qpj8S0ZbZ5dWGyrzzRk4MhmftC/5vnWF7HQr3oRNU7BJPGTlhdQZSjy9yQzF8W+lZ4BkJnJEHJ3K6NoqquxWPhmqrNAorhV2HHnZbO9pyemy+ys7BLMxhkS2E1K6/8B6iSrlxliV4NwvK9zYWSudUJJrWusBkPQY6dh60JWenJHO+l0eb3adlST6sGDCq6jprlybwDVVyo3w7loADkQkUnT5Jvwm4Jk6Gl6y6dxlDE58J/+IUpj/QhbkCCH4Uzv6gwgElcM0qizHjvAiqf+uBbvfTOLJHN+aOjWgUPjDHGGGOMMcYYY4wxxhhjjP3ffgE2nnm8wZ8qdAAAAABJRU5ErkJggg=="
-                            alt="logo da empresa stihl com cores laranjas e letras representando a marca."
-                        />
-                    </div>
-                    <div class="partners">
-                        <img
-                            src="data:image/png;base64,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"
-                            alt="Logo da empresa GM com letras azuis representando a marca envolta em uma espécie de quadrado com bordas arredondadas."
-                        />
-                    </div>
-                    <div class="partners">
-                        <img
-                            src="/assets/toyota.png"
-                            alt="Logo da empresa toyota em cores cinzas com um formato arredondado simbolizando a letra T."
-                        />
-                    </div>
-                    <div class="partners">
-                        <img
-                            src="data:image/png;base64,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"
-                            alt="Logo da empresa Valmet com cores cinzas e um icone ao lado em cores verde e cinza simbolizando a marca da empresa."
-                        />
-                    </div>
-                    <div class="partners">
-                        <img
-                            src="data:image/png;base64,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"
-                            alt="Logo da empresa poyry"
-                        />
-                    </div>
-                    <div class="partners disabled-small-screen">
-                        <img
-                            src="data:image/png;base64,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"
-                            alt="Logo da empresa Klabin"
-                        />
-                    </div>
-                    <div class="partners disabled-small-screen">
-                        <img
-                            src="data:image/png;base64,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"
-                            alt="Logo da empresa Estrutural"
-                        />
-                    </div>
-                    <div class="partners disabled-small-screen">
-                        <img
-                            src="data:image/png;base64,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"
-                            alt="Logo da empresa Imetame"
-                        />
-                    </div>
-                    <div class="partners disabled-small-screen">
-                        <img
-                            src="/assets/rioprel.png"
-                            alt="Logo da empresa Rioprel"
-                        />
-                    </div>
-                    <div class="partners disabled-small-screen">
-                        <img
-                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAYAAAA8AXHiAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAskSURBVHgB7Z3Rdds6EoZH99z3qANzK4huBeJWYG8FciqQtwIpFcipQE4FSiqQUoGUCsRUYKUCLEccmNBwQIK2nE3k/zvGkQgOBiAwAsABSBMBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHrgiLIy5ATAuRCjmvnv9AYZEOhFaShDqkIbbFQfy8otgjSjMlyVcZ8JAIYNg3ugMmzL4FR4DEIYv5Y0eaBnVIa9q4wMgKfhbWkYkA9sdKsyLMSglmJETj4noofPb+nCwVD4DKTH4fCe6u/W8Lijao7FnzlVQyOHYVnx/xAAXcjQt5Qeaa16M+6x8qC3WxEAXZSGcsvGo+IyHx/MuRZ+XkYAdBHOoSLnZ2JQs6AXywmAGKWB3MkQN4ycHwYT+2V410gAWMhwx73VsuP8Xr6PQjcFAWAhcyg2kqlxzvdk69D7robDKwJAE0zMxyr+XozKMrgchgWiqGFt7Cfj5edc91Iq3TBI17U0BN4apVHcKK97JvHjhLROuycujb8IPJewt8n8l9Kj/o3S2NEF8zeB57IJvrOR8fD3YXAa3yAYIjeR8373REbN4fTAoSuP3wGsFb4AcRnoeRL3RPdl+Eq1kYQy7+U8BzaUjOptNSlbcpiiDHNswblQgrtCK8yVa6FveJS522PgC5v+KXeS6LFegDv+HXuo2P6qgqphKxzePD7uEBwXInOQsBH9HL4PallwyUgvcnQtuNP9V33DXtJPxXXxx7sh0GO9AFdtQZ6X4YGqOVUhp95RPW/yIWtRxen+M7jwO0XQA1dvhUkNW0kzESfrRTpJ0WOdAXEh5FRNrDOJ9vOkQj6P87Cywj8SAOeiNL5bAuCcyOQ+I3A+LnUO0QcY1Rlw1U7JbXDrPSUAXopxFzQhcJHIFqDc6pHPurshMuwVBC6VMVU+uxvd9ufeNmMZ1k86A65+Xo/XzhYEfgnBigLX+zKIz6hyo+RULayfcO5tM6/SY8lF3J1TJ0jmNvhe+C/8whNpF15xaKxhvrphnWnhVC/yFgReHdesd73ktIu172vvIC26BBLdEbqr/UHgV5Cp4xMjaus0knosV42jfHfHn+F2j00ZPgU7GjOVtDB0cVoe1njid9zc5mrZDQXvlRL5rPy4UWoOwZ0I76g8iGfbL/5mZdwHST+nyjC9AT+EG+TUtT3pNK7Ny99G8hkGekaiYxe5ninVC9OmnMpzJLpvqK5/TsPyn8t0Xwz5kZQzK8NXfx1yvddUt2Vh1Ikv11gVZeBOt2EX9BzkVjJlK8hc5Kcqfqn0+WfturaQjES+S9aJ3ywz4tlgH4z4qa8813x5hxWWvld1p0/YHEOgax9Jv1XX77rkAnnO7z6hjGt3+uzi0hkun0h9NNoqsd7X9BxctQNSK/O7GV2kIWcqbhboe4gY0TZSUaOEi+OwcEaDR/Q60dtmCK2VGNHXpevOtRuVD7kyqm2PMnIZhjHDirRnI39n12WrIfYxqtwo9Dg4zw2zMgrfuCCRvzcaXevbK5mbxAucRho8VvlWXnx83PYrYW2knUTy8b/utdTB2ND/qOSuXfUUte4ZFkGdLA0dM1cbj2Woi0javdIxjqTnOkj9Qc+oL6pijo1hyEwNw1qruLGrH0MP9Q0NfboyfAXq9MtImc2Ld7JHXCpsGKn0TOkaGo2+bslnpdLfpDSGa/bwq8g1cxgZ12ztBbOu0RtVptKvIoY5dE0DmwXprlzfNWDjomaGjPWr5zjddY8MY7MqKFf69hRvpLGRftjViEG5tVxGdj3MIo3mEgzTymdv5HETMd5t17W05DOJGNbESB+dE7vmqNVrzde6K9QF4DuunCoLvaLKMPzdiWceOMxO0tLpe6D4mBvHp/evWsxVuv8G37WrwfLkW78e69GoXB1vWu5sOP1cxWWG3Cbx7mhuxDVu1119R6fL0kDq/FindFpGXR/FwNbxs6U8mdZBPTgxLOneciVzH09+LAgb1SfXfCauoGYFHR/sbNG3EX3fgrjnOEd3kca+NvIzkUbTZIboA3VziDSsNgDrFr/LcA+GHn28iaR9Z+jyXLWc60T3WFmHfEG1/+RLggFcteg6BPqOYWA/nn5SSRGnXGbkTS+Qi6HzPqSUmeIPSViNl6m4gvph1c+XiGzWkvY5P+gntGFZQ0pOVVf6g9qxfn3WL+e2DD8H6b+ALEHGyjtFLoprVqylc5eYT6pcQWnX25XXnYqLtV2mjg8xvYOeqx1/tyj2Cr9RGnouVBgyxaD/ckyKMVwl5G2RtZzThrWh9N4kpS6sPFiua1h7Ipj7PqXn9tJz3UE/w46d68VfLYqPuPRHujN1zEaqjeiG+jM8kwyjKzhvkZ2pYx5OUg04S5SzGlbL5hRH32htXLuxaLRh/4yULXV0eeLEsAb1GlnI3Eoot95TV0/GMyVSUHNs5zTziD52Tcxd009V6HyN44zS2Kjj3BkNJ2XMwjLI5Du10VKGUUuOG1ZP8rnO7owy5tTc0vKREo3a2S8gMWWlDLreM+qDs51z7Kux/pUHh62k036tscRbTryt6Jq55gv3F6o8a6MsPt2jN+4un42vTGd73SfiE8qd7QPya5cr6xqNfLZWeqMsDT9ZS53dSZrjj9M1HbgTSav9T6tIGRsednV+ZdTTUuLN12B24tIWZ7VTz0UMy2rMtjBVZZl1yI+NhrxuubaRS1tkbRipUS/jSB5ax1WkHGbDPqPOZkFa3TEsI2XUBrjvWe/ROo7i4ssCDaNy9a85WpkubdH3ZC0ssZL3IqPPjzquL2XheO+aL63tzMe19ERKrqthU+vsRqWbKZlFpA60Aa4pvd4by0OaQdtJqVguOFdgJtE8Ad5Q5cf64QtB1S/7IGFn3f25ak5wTafeYa/vc8wFIfpvgjwKSfdV9mLNqH6U/ZB6JxuUJzQQ1sv7k74a8j4fprDyUXVRUOROWBpmkqDvVuS4jEOq92/x/LVRZ65+1J9Et/n6I5EbB/kf9DW7+tUB4+B6vg3w8hIAAAAAAAAAAOD/jfc1dfnXImlH7g/8p5n4lye/Bu+kHFN/2M/m6A/jTRuWq/acz7wXWbzh+pg94FNXv7Jnqs4fX1Qrx5mknwR5sKx/wPar6LkVuVXQm/n4UPctVb1cEZQjLN/J8e/EmzUsVz8B/UBVw99T5bFm7/PC1duovRd9T1XvwfFTV68EcLqRGNOSqlWEjcqO03N+Y6oWhbdehp9iDrzrrP/KVTLvJM+ReO5ZN3u8j99dvSLykLjn/pfylnssbiQ2klyWPN4PqiUSji+oamReZuGtKLzUwkse/JCH/x85vFj+SRqd4zKJv6XTpbJM8novevnk9/LjX1T1RCz/yM8NiDzHDwfVchXnu5MfAe995+WUB6qXwzj+H/oNebOGJcb0garhcKJOZ/JZBHH+u1+vY5nHQJ6NkBuZjWGhdBVUG8NxgZ+qHomNlvP2a4kjCjb7yRA3ImOb96BaK/w3Vb1r75uC1+bN/lu5YIHVL5xvXLWhzh+zgYQNtpFPvwjMxsB7pLj34d7tg7Nfuf0u0PU9iPcb7VgvD61+YZc/2Vimcp57yp3M5Xj4O/73sKD8O3rGDk/wSshk+Nqd7hubOHvvlLVr1bsCroPjJ32WDpmc+/+Xw2Et58Yu2KUpZZsYcdexY/CGkV7nWr6zYeCVl+DluPo1BEuH15QDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOC1+R+u+AkAJ0vABQAAAABJRU5ErkJggg=="
-                            alt="Logo da empresa Eletromont"
-                        />
-                    </div>
-                    <div class="partners disabled-small-screen">
-                        <img
-                            src="/assets/matrifios.png"
-                            alt="Logo da empresa Matrifios"
-                        />
-                    </div>
-                    <div class="partners disabled-small-screen">
-                        <img
-                            src="/assets/rip.png"
-                            alt="Logo da empresa RIP"
-                        />
-                    </div>
-                    <div class="partners disabled-small-screen">
-                        <img
-                            src="/assets/jsl.png"
-                            alt="Logo da empresa JSL"
-                        />
-                    </div>
-                    <div class="partners disabled-small-screen">
-                        <img
-                            src="/assets/mastermec.png"
-                            alt="Logo da empresa mastermec"
-                        />
-                    </div>
-                    <div class="partners disabled-small-screen">
-                        <img
-                            src="/assets/suply.png"
-                            alt="Logo da empresa Suply"
-                        />
-                    </div>
-                    <div class="partners disabled-small-screen">
-                        <img
-                            src="/assets/ferramentas-gerais.png"
-                            alt="Logo da empresa Feramentas Gerais"
-                        />
-                    </div>
-                    <div class="partners disabled-small-screen">
-                        <img
-                            src="/assets/prodesigner.png"
-                            alt="Logo da empresa Pro designer"
-                        />
-                    </div>
-                </div>
-                <button class="partner-btn">Saiba mais</button>
-            </section>
-
-            <section id="data-section">
-                <div class="data-container">
-                    <div class="data-header">
-                        <div>
-                            <span>Conheça a Fibrasul!</span>
-                            <h2>Quem somos?</h2>
-                        </div>
-
-                        <img
-                            src="/assets/fibrasul-logo.png"
-                            alt="logo fibrasul"
-                        />
-                    </div>
-
-                    <div class="data-flex">
-                        <div class="data">
-                            <div class="data-content">
-                                <span><strong>+</strong>1580</span>
-                                <img
-                                    src="/assets/medal-icon.svg"
-                                    alt="ícone de medalha, certificação"
-                                />
-                            </div>
-                            <div class="data-line"></div>
-                            <p>Dias sem acidentes / Incidentes</p>
-                        </div>
-
-                        <div class="data">
-                            <div class="data-content">
-                                <span><strong>+</strong>90</span>
-                                <img
-                                    src="/assets/workers.svg"
-                                    alt="ícone de várias pessoas reunidas"
-                                />
-                            </div>
-                            <div class="data-line"></div>
-                            <p>Funcionários Qualificados</p>
-                        </div>
-
-                        <div class="data">
-                            <div class="data-content">
-                                <span><strong>+</strong>200</span>
-                                <img
-                                    src="/assets/briefcase-icon.svg"
-                                    alt="ícone de uma maleta"
-                                />
-                            </div>
-                            <div class="data-line"></div>
-                            <p>Projetos diversos realizados</p>
-                        </div>
-
-                        <div class="data">
-                            <div class="data-content">
-                                <span><strong>+</strong>6</span>
-                                <img
-                                    src="/assets/gear-icon.svg"
-                                    alt="ícone de engrenagem"
-                                />
-                            </div>
-                            <div class="data-line"></div>
-                            <p>anos de operação</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="team-section">
-                <div class="team-header">
-                    <h2>Equipe</h2>
-                    <div></div>
-
+                  </div>
+                  <div class="service-info-container">
+                    <h3>Descrição</h3>
                     <p>
-                        Nossa equipe é especializada em que oferece, mantendo
-                        padrões de excelência e segurança.
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Inventore, temporibus provident ab distinctio vitae nemo
+                      omnis dignissim os maiores dolores enim magni. Quos
+                      molestiae itaque corporis autem recusandae. Eius, laborum
+                      tenetur. Lorem ipsum dolor, sit amet consectetur
+                      adipisicing elit. Inventore, temporibus provident ab
+                      distinctio vitae nemo omnis dignissim os maiores dolores
+                      enim magni. Quos molestiae itaque corporis autem
+                      recusandae. Eius, laborum tenetur.
                     </p>
-                    <span>
-                        Nosso maior patrimônio é o
-                        <strong>elemento humano.</strong>
-                    </span>
-                </div>
-                <div class="banners-container">
-                    <div class="banner">
-                        <div>
-                            <span>Gestão</span>
-                            <p>
-                                Acreditamos que todo bom trabalho surge de uma
-                                boa administração de recursos e um bom
-                                gerenciamento do tempo, por isso, prezamos
-                                sempre por contratatar profissionais bem
-                                capacitados e que possam garantir as
-                                expectativas creditadas na empresa.
-                            </p>
-                        </div>
+                    <div class="scope-objectives">
+                      <h3>Objetivos do Escopo</h3>
+                      <ul>
+                        <li>
+                          Lorem Ipsum has been the industry's standard dummy
+                          text ever since the 1500s.
+                        </li>
+                        <li>
+                          Lorem Ipsum has been the industry's standard dummy
+                          text ever since the 1500s, Lorem Ipsum has been the
+                          industry's standard dummy text ever since the 1500s.
+                        </li>
+                        <li>
+                          Lorem Ipsum has been the industry's standard dummy
+                          text ever since the 1500s.
+                        </li>
+                      </ul>
+                    </div>
 
+                    <div class="services-partners">
+                      <div class="hirer">
+                        <span>Contratante</span>
                         <img
-                            src="/assets/teams-gestao.png"
-                            alt="Imagem de uma mulher loira de costas mexendo em um notebook aparentemente realizando o seu trabalho."
+                          src="/assets/cmpc.png"
+                          alt="cmpc logo"
                         />
-                    </div>
-
-                    <div class="banner">
-                        <div>
-                            <span>Segurança</span>
-                            <p>
-                                O elemento humano é o nosso maior patrimônio,
-                                então prezamos pela segurança dos nossos
-                                colaboradores fazendo com que entendam todo o
-                                equipamento necessário para execução de
-                                trabalhos que contenham riscos previnindo
-                                acidente de trabalho.
-                            </p>
-                        </div>
-
+                      </div>
+                      <div class="partners-container">
+                        <span>Parceiras</span>
                         <img
-                            src="/assets/teams-seguranca.png"
-                            alt="foto"
+                          src="/assets/cmpc.png"
+                          alt="cmpc logo"
                         />
-                    </div>
-
-                    <div class="banner">
-                        <div>
-                            <span>Equipe de Compósitos</span>
-                            <p>
-                                Primeiro setor da FIBRASULRS, reconhecido por
-                                seus trabalhos realizados com excelência.
-                                Referência no complexo industrial da CMPC, em
-                                Guaíba, por conter profissionais bem capacitados
-                                e amplo conhecimento com relação a manutenção de
-                                tubulações/tanques utilizando compósitos.
-                            </p>
-                        </div>
-
                         <img
-                            src="/assets/teams-fibra.png"
-                            alt="Imagem de um colaborador realizando o polimento de uma tubulação de fibra com máscara, capacete e um jaleco."
+                          src="/assets/cmpc.png"
+                          alt="cmpc logo"
                         />
+                      </div>
                     </div>
+                  </div>
+                </div>
+              </section>
 
-                    <div class="banner">
-                        <div>
-                            <span>Caldeiraria e Pintura</span>
-                            <p>
-                                A equipe de caldeiraria conta com colabores
-                                experientes e capacitados para a realização de
-                                cortes, soldas, acabamentos, fabricação de
-                                tubulações, suportes e estruturas de acordo com
-                                o escopo dos projetos.
-                            </p>
-                        </div>
-
+              <section id="section-two">
+                <div class="service-header">
+                  <h2>Titulo do Serviço</h2>
+                  <span>20/12/2022 à 30/12/2022</span>
+                </div>
+                <div class="service-body">
+                  <div class="service-picture-container">
+                    <div class="after-before-pic">
+                      <span>Antes</span>
+                      <img src="" alt="image" />
+                      <span>Descrição da imagem</span>
+                    </div>
+                    <div class="after-before-pic">
+                      <span>Depois</span>
+                      <img src="" alt="image" />
+                      <span>Descrição da imagem</span>
+                    </div>
+                  </div>
+                  <div class="service-info-container">
+                    <h3>Descrição</h3>
+                    <p>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Inventore, temporibus provident ab distinctio vitae nemo
+                      omnis dignissim os maiores dolores enim magni. Quos
+                      molestiae itaque corporis autem recusandae. Eius, laborum
+                      tenetur. Lorem ipsum dolor, sit amet consectetur
+                      adipisicing elit. Inventore, temporibus provident ab
+                      distinctio vitae nemo omnis dignissim os maiores dolores
+                      enim magni. Quos molestiae itaque corporis autem
+                      recusandae. Eius, laborum tenetur.
+                    </p>
+                    <div class="scope-objectives">
+                      <h3>Objetivos do Escopo</h3>
+                      <ul>
+                        <li>
+                          Lorem Ipsum has been the industry's standard dummy
+                          text ever since the 1500s.
+                        </li>
+                        <li>
+                          Lorem Ipsum has been the industry's standard dummy
+                          text ever since the 1500s, Lorem Ipsum has been the
+                          industry's standard dummy text ever since the 1500s.
+                        </li>
+                        <li>
+                          Lorem Ipsum has been the industry's standard dummy
+                          text ever since the 1500s.
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="services-partners">
+                      <div class="hirer">
+                        <span>Contratante</span>
                         <img
-                            src="/assets/teams-caldeiraria.png"
-                            alt="Imagem retirado de um trabalhador enquanto ele realizava um processo de lixar uma tubulação. Ele está equipado com proteção de visera, capacete e luvas."
+                          src="/assets/cmpc.png"
+                          alt="cmpc logo"
                         />
-                    </div>
-
-                    <div class="banner">
-                        <div>
-                            <span>Andaime</span>
-                            <p>
-                                A montagem de andaimes para a execução de
-                                projetos sempre se faz necessária no meio
-                                industrial. Nossos andaimes estão adequados a
-                                todas normas e procedimentos de segurança
-                                exigidos.
-                            </p>
-                        </div>
-
+                      </div>
+                      <div class="partners-container">
+                        <span>Parceiras</span>
                         <img
-                            src="/assets/teams-andaime.png"
-                            alt="foto"
+                          src="/assets/cmpc.png"
+                          alt="cmpc logo"
                         />
-                    </div>
-
-                    <div class="banner">
-                        <div>
-                            <span>Isolamento Térmico</span>
-                            <p>
-                                Fabricação e montagem de isolamento térmico para
-                                a contenção de vapores das tubulações de
-                                caldeira. Nossos profissionais são qualificados
-                                para a execução do trabalho, contendo todas as
-                                NRs necessárias para a execução.
-                            </p>
-                        </div>
-
                         <img
-                            src="/assets/teams-isolamento.png"
-                            alt="foto"
+                          src="/assets/cmpc.png"
+                          alt="cmpc logo"
                         />
+                      </div>
                     </div>
+                  </div>
                 </div>
-            </section>
-        </main>
+              </section>
 
-        <footer id="contacts-section">
-            <h2>Contate-nos</h2>
-            <div class="footer-container">
-                <div class="info-container">
-                    <div class="info-header">
-                        <ion-icon name="mail" class="footer-icon"></ion-icon>
-                        <span>Email:</span>
-                    </div>
-                    <span class="info-detail">contato@fibrasulrs.com</span>
-                    <span class="info-detail">michele@fibrasulrs.com (RH)</span>
+              <section id="section-three">
+                <div class="service-header">
+                  <h2>Titulo do Serviço</h2>
+                  <span>20/12/2022 à 30/12/2022</span>
                 </div>
+                <div class="service-body">
+                  <div class="service-picture-container">
+                    <div class="after-before-pic">
+                      <span>Antes</span>
+                      <img src="" alt="image" />
+                      <span>Descrição da imagem</span>
+                    </div>
+                    <div class="after-before-pic">
+                      <span>Depois</span>
+                      <img src="" alt="image" />
+                      <span>Descrição da imagem</span>
+                    </div>
+                  </div>
+                  <div class="service-info-container">
+                    <h3>Descrição</h3>
+                    <p>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Inventore, temporibus provident ab distinctio vitae nemo
+                      omnis dignissim os maiores dolores enim magni. Quos
+                      molestiae itaque corporis autem recusandae. Eius, laborum
+                      tenetur. Lorem ipsum dolor, sit amet consectetur
+                      adipisicing elit. Inventore, temporibus provident ab
+                      distinctio vitae nemo omnis dignissim os maiores dolores
+                      enim magni. Quos molestiae itaque corporis autem
+                      recusandae. Eius, laborum tenetur.
+                    </p>
+                    <div class="scope-objectives">
+                      <h3>Objetivos do Escopo</h3>
+                      <ul>
+                        <li>
+                          Lorem Ipsum has been the industry's standard dummy
+                          text ever since the 1500s.
+                        </li>
+                        <li>
+                          Lorem Ipsum has been the industry's standard dummy
+                          text ever since the 1500s, Lorem Ipsum has been the
+                          industry's standard dummy text ever since the 1500s.
+                        </li>
+                        <li>
+                          Lorem Ipsum has been the industry's standard dummy
+                          text ever since the 1500s.
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="services-partners">
+                      <div class="hirer">
+                        <span>Contratante</span>
+                        <img
+                          src="/assets/cmpc.png"
+                          alt="cmpc logo"
+                        />
+                      </div>
+                      <div class="partners-container">
+                        <span>Parceiras</span>
+                        <img
+                          src="/assets/cmpc.png"
+                          alt="cmpc logo"
+                        />
+                        <img
+                          src="/assets/cmpc.png"
+                          alt="cmpc logo"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
 
-                <div class="info-container">
-                    <div class="info-header">
-                        <ion-icon name="call" class="footer-icon"></ion-icon>
-                        <span>Número:</span>
-                    </div>
-                    <span
-                        class="info-detail"
-                        >RH (51) 98314-2681
-                        <ion-icon
-                            name="logo-whatsapp"
-                            class="wpp-icon"
-                        ></ion-icon
-                    ></span>
-                    <span
-                    class="info-detail"
-                        >RH (51) 98314-2681
-                        <ion-icon
-                            name="logo-whatsapp"
-                            class="wpp-icon"
-                        ></ion-icon
-                    ></span>
+              <section id="section-four">
+                <div class="service-header">
+                  <h2>Titulo do Serviço</h2>
+                  <span>20/12/2022 à 30/12/2022</span>
                 </div>
+                <div class="service-body">
+                  <div class="service-picture-container">
+                    <div class="after-before-pic">
+                      <span>Antes</span>
+                      <img src="" alt="image" />
+                      <span>Descrição da imagem</span>
+                    </div>
+                    <div class="after-before-pic">
+                      <span>Depois</span>
+                      <img src="" alt="image" />
+                      <span>Descrição da imagem</span>
+                    </div>
+                  </div>
+                  <div class="service-info-container">
+                    <h3>Descrição</h3>
+                    <p>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Inventore, temporibus provident ab distinctio vitae nemo
+                      omnis dignissim os maiores dolores enim magni. Quos
+                      molestiae itaque corporis autem recusandae. Eius, laborum
+                      tenetur. Lorem ipsum dolor, sit amet consectetur
+                      adipisicing elit. Inventore, temporibus provident ab
+                      distinctio vitae nemo omnis dignissim os maiores dolores
+                      enim magni. Quos molestiae itaque corporis autem
+                      recusandae. Eius, laborum tenetur.
+                    </p>
 
-                <div class="info-container">
-                    <div class="info-header">
-                        <ion-icon
-                            name="location"
-                            class="footer-icon"
-                        ></ion-icon>
-                        <span>Endereço:</span>
+                    <div class="scope-objectives">
+                      <h3>Objetivos do Escopo</h3>
+                      <ul>
+                        <li>
+                          Lorem Ipsum has been the industry's standard dummy
+                          text ever since the 1500s.
+                        </li>
+                        <li>
+                          Lorem Ipsum has been the industry's standard dummy
+                          text ever since the 1500s, Lorem Ipsum has been the
+                          industry's standard dummy text ever since the 1500s.
+                        </li>
+                        <li>
+                          Lorem Ipsum has been the industry's standard dummy
+                          text ever since the 1500s.
+                        </li>
+                      </ul>
                     </div>
-                    <span
-                    class="info-detail"
-                        >Complexo Industrial CMPC, <br />
-                        Guaíba, RS, Brasil</span
-                    >
-                </div>
-
-                <div class="info-container">
-                    <div class="info-header">
-                        <ion-icon
-                            name="person-circle"
-                            class="footer-icon"
-                        ></ion-icon>
-                        <span>Redes Sociais</span>
+                    <div class="services-partners">
+                      <div class="hirer">
+                        <span>Contratante</span>
+                        <img
+                          src="/assets/cmpc.png"
+                          alt="cmpc logo"
+                        />
+                      </div>
+                      <div class="partners-container">
+                        <span>Parceiras</span>
+                        <img
+                          src="/assets/cmpc.png"
+                          alt="cmpc logo"
+                        />
+                        <img
+                          src="/assets/cmpc.png"
+                          alt="cmpc logo"
+                        />
+                      </div>
                     </div>
-                    <span>
-                        <a
-                            href="https://www.linkedin.com/in/fibrasulrs-manuten%C3%A7%C3%B5es-industriais-5b985b251/"
-                            target="_blank"
-                            ><ion-icon
-                                class="info-detail linkedin"
-                                name="logo-linkedin"
-                                class="footer-icon"
-                            ></ion-icon
-                        ></a>
-                        <a href="https://wa.me/555183142681" target="_blank">
-                            <img
-                                class="info-detail wpp"
-                                src="/assets/wpp-logo.svg"
-                                alt="logo do whatsapp"
-                                title="logo do whatsapp"
-                            />
-                        </a>
-                    </span>
+                  </div>
                 </div>
+              </section>
             </div>
+            <div class="controls">
+              <button class="portfolio-btn">
+                <ion-icon
+                  class="arrow-right"
+                  name="chevron-forward-outline"
+                  aria-label="Icone de seta utilizado para avançar uma posição no carrosel"
+                >
+                </ion-icon>
+              </button>
 
-            <div class="footer-links">
-                <nav>
-                    <ul
-                        id="primary-navigation"
-                        class="primary-navigation flex footer"
-                        data-visible="false"
-                    >
-                        <li>
-                            <a href="#">Início</a>
-                        </li>
-
-                        <li>
-                            <a href="#cards-section">Serviços</a>
-                        </li>
-
-                        <li class="portfolio-link">
-                            <a href="#portfolio-section">Portfolio</a>
-                        </li>
-
-                        <li>
-                            <a href="#data-section">Equipe</a>
-                        </li>
-
-                        <li>
-                            <a href="#contacts-section">Contato</a>
-                        </li>
-                    </ul>
-                </nav>
+              <ul class="portfolio-bullet-nav">
+                <li class="selected"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="data-section">
+        <div class="data-container">
+          <div class="data-header">
             <div>
-                <img
-                    src="/assets/fibrasul-logo.png"
-                    alt="logo do site fibrasul"
-                />
+              <span>Conheça a Fibrasul!</span>
+              <h2>Quem somos?</h2>
             </div>
-        </footer>
-        
-        <script
-            type="module"
-            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-        ></script>
-        <script
-            nomodule
-            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-        ></script>
-    </body>
+
+            <img src="/assets/fibrasul-logo.png" alt="logo fibrasul" />
+          </div>
+
+          <div class="data-flex">
+            <div class="data">
+              <div class="data-content">
+                <span><strong>+</strong>1580</span>
+                <img
+                  src="/assets/medal-icon.svg"
+                  alt="ícone de medalha, certificação"
+                />
+              </div>
+              <div class="data-line"></div>
+              <p>Dias sem acidentes / Incidentes</p>
+            </div>
+
+            <div class="data">
+              <div class="data-content">
+                <span><strong>+</strong>90</span>
+                <img
+                  src="/assets/workers.svg"
+                  alt="ícone de várias pessoas reunidas"
+                />
+              </div>
+              <div class="data-line"></div>
+              <p>Funcionários Qualificados</p>
+            </div>
+
+            <div class="data">
+              <div class="data-content">
+                <span><strong>+</strong>200</span>
+                <img
+                  src="/assets/briefcase-icon.svg"
+                  alt="ícone de uma maleta"
+                />
+              </div>
+              <div class="data-line"></div>
+              <p>Projetos diversos realizados</p>
+            </div>
+
+            <div class="data">
+              <div class="data-content">
+                <span><strong>+</strong>6</span>
+                <img src="/assets/gear-icon.svg" alt="ícone de engrenagem" />
+              </div>
+              <div class="data-line"></div>
+              <p>anos de operação</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="transparency-section">
+        <span>Somos transparentes</span>
+        <h2>Igualdade Salarial</h2>
+
+        <div class="transparency-container">
+          <img
+            src="/assets/relatorio-igualdade-2025.jpg"
+            alt="documento que mostra a transparecencia da empresa na relação de igualdade salarial"
+          />
+          <p>
+            Documento de 2025 que mostra a transparência da empresa em relação a
+            igualdade salarial entre gênero.
+          </p>
+          <a href="./assets/images/relatorio-igualdade-2025-pdf.pdf" download
+            >Confira!</a
+          >
+        </div>
+      </section>
+
+      <section id="team-section">
+        <div class="team-header">
+          <h2>Equipe</h2>
+          <div></div>
+
+          <p>
+            Nossa equipe é especializada em que oferece, mantendo padrões de
+            excelência e segurança.
+          </p>
+          <span>
+            Nosso maior patrimônio é o
+            <strong>elemento humano.</strong>
+          </span>
+        </div>
+        <div class="banners-container">
+          <div class="banner">
+            <div>
+              <span>Gestão</span>
+              <p>
+                Acreditamos que todo bom trabalho surge de uma boa administração
+                de recursos e um bom gerenciamento do tempo, por isso, prezamos
+                sempre por contratatar profissionais bem capacitados e que
+                possam garantir as expectativas creditadas na empresa.
+              </p>
+            </div>
+
+            <img
+              src="/assets/teams-gestao.png"
+              alt="Imagem de uma mulher loira de costas mexendo em um notebook aparentemente realizando o seu trabalho."
+            />
+          </div>
+
+          <div class="banner">
+            <div>
+              <span>Segurança</span>
+              <p>
+                O elemento humano é o nosso maior patrimônio, então prezamos
+                pela segurança dos nossos colaboradores fazendo com que entendam
+                todo o equipamento necessário para execução de trabalhos que
+                contenham riscos previnindo acidente de trabalho.
+              </p>
+            </div>
+
+            <img src="/assets/teams-seguranca.png" alt="foto" />
+          </div>
+
+          <div class="banner">
+            <div>
+              <span>Equipe de Compósitos</span>
+              <p>
+                Primeiro setor da FIBRASULRS, reconhecido por seus trabalhos
+                realizados com excelência. Referência no complexo industrial da
+                CMPC, em Guaíba, por conter profissionais bem capacitados e
+                amplo conhecimento com relação a manutenção de
+                tubulações/tanques utilizando compósitos.
+              </p>
+            </div>
+
+            <img
+              src="/assets/teams-fibra.png"
+              alt="Imagem de um colaborador realizando o polimento de uma tubulação de fibra com máscara, capacete e um jaleco."
+            />
+          </div>
+
+          <div class="banner">
+            <div>
+              <span>Caldeiraria e Pintura</span>
+              <p>
+                A equipe de caldeiraria conta com colabores experientes e
+                capacitados para a realização de cortes, soldas, acabamentos,
+                fabricação de tubulações, suportes e estruturas de acordo com o
+                escopo dos projetos.
+              </p>
+            </div>
+
+            <img
+              src="/assets/teams-caldeiraria.png"
+              alt="Imagem retirado de um trabalhador enquanto ele realizava um processo de lixar uma tubulação. Ele está equipado com proteção de visera, capacete e luvas."
+            />
+          </div>
+
+          <div class="banner">
+            <div>
+              <span>Andaime</span>
+              <p>
+                A montagem de andaimes para a execução de projetos sempre se faz
+                necessária no meio industrial. Nossos andaimes estão adequados a
+                todas normas e procedimentos de segurança exigidos.
+              </p>
+            </div>
+
+            <img src="/assets/teams-andaime.png" alt="foto" />
+          </div>
+
+          <div class="banner">
+            <div>
+              <span>Isolamento Térmico</span>
+              <p>
+                Fabricação e montagem de isolamento térmico para a contenção de
+                vapores das tubulações de caldeira. Nossos profissionais são
+                qualificados para a execução do trabalho, contendo todas as NRs
+                necessárias para a execução.
+              </p>
+            </div>
+
+            <img src="/assets/teams-isolamento.png" alt="foto" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contacts-section">
+      <h2>Contate-nos</h2>
+      <div class="footer-container">
+        <div class="info-container">
+          <div class="info-header">
+            <ion-icon name="mail" class="footer-icon"></ion-icon>
+            <span>Email:</span>
+          </div>
+          <span class="info-detail">contato@fibrasulrs.com</span>
+          <span class="info-detail">michele@fibrasulrs.com (RH)</span>
+        </div>
+
+        <div class="info-container">
+          <div class="info-header">
+            <ion-icon name="call" class="footer-icon"></ion-icon>
+            <span>Número:</span>
+          </div>
+          <span class="info-detail"
+            >RH (51) 98314-2681
+            <ion-icon name="logo-whatsapp" class="wpp-icon"></ion-icon
+          ></span>
+          <span class="info-detail"
+            >RH (51) 98314-2681
+            <ion-icon name="logo-whatsapp" class="wpp-icon"></ion-icon
+          ></span>
+        </div>
+
+        <div class="info-container">
+          <div class="info-header">
+            <ion-icon name="location" class="footer-icon"></ion-icon>
+            <span>Endereço:</span>
+          </div>
+          <span class="info-detail"
+            >Complexo Industrial CMPC, <br />
+            Guaíba, RS, Brasil</span
+          >
+        </div>
+
+        <div class="info-container">
+          <div class="info-header">
+            <ion-icon name="person-circle" class="footer-icon"></ion-icon>
+            <span>Redes Sociais</span>
+          </div>
+          <span>
+            <a
+              href="https://www.linkedin.com/in/fibrasulrs-manuten%C3%A7%C3%B5es-industriais-5b985b251/"
+              target="_blank"
+              ><ion-icon
+                class="info-detail linkedin"
+                name="logo-linkedin"
+                class="footer-icon"
+              ></ion-icon
+            ></a>
+            <a href="https://wa.me/555183142681" target="_blank">
+              <img
+                class="info-detail wpp"
+                src="/assets/wpp-logo.svg"
+                alt="logo do whatsapp"
+                title="logo do whatsapp"
+              />
+            </a>
+          </span>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <nav>
+          <ul
+            id="primary-navigation"
+            class="primary-navigation flex footer"
+            data-visible="false"
+          >
+            <li>
+              <a href="#">Início</a>
+            </li>
+
+            <li>
+              <a href="#cards-section">Serviços</a>
+            </li>
+
+            <li class="portfolio-link">
+              <a href="#portfolio-section">Portfolio</a>
+            </li>
+
+            <li>
+              <a href="#transparency-section">Transparência</a>
+            </li>
+
+            <li>
+              <a href="#data-section">Equipe</a>
+            </li>
+
+            <li>
+              <a href="#contacts-section">Contato</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div>
+        <img src="/assets/fibrasul-logo.png" alt="logo do site fibrasul" />
+      </div>
+    </footer>
+    
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>
