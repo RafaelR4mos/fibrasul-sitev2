@@ -2,7 +2,7 @@
     position: relative;
     padding: 2.5rem 5rem 2.5rem;
     background: var(--neutral-800);
-    height: 37.5rem;
+    min-height: 37.5rem;
 }
 
 .data-header {
@@ -29,15 +29,12 @@
 }
 
 .data-flex {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    gap: 5rem;
+    margin: 3rem 0 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    align-items: start;
+    justify-content: center;
+    gap: 2rem;
 }
 
 .data {
@@ -86,17 +83,64 @@ span > strong {
 .data > p {
     margin-top: 0.5rem;
     color: #ffff;
-    text-align: center;
+    text-align: left;
     text-transform: capitalize;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.about-card {
+    border: 1px solid var(--neutral-700);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.about-card h3 {
+    color: var(--gray-200);
+    margin-bottom: 0.75rem;
+}
+
+.about-card p,
+.about-card li {
+    color: var(--gray-200);
+    line-height: 1.5;
+}
+
+.about-card ul {
+    margin-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.about-card li {
+    list-style: disc;
 }
 
 @media (max-width: 1000px) {
     .data-flex {
-        margin-top: 2rem;
-        position: none;
         display: grid;
         grid-template-columns: repeat(2, 2fr);
-        justify-items: center;
+        justify-items: stretch;
         align-items: center;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .data-container {
+        padding: 2.5rem 1.25rem;
+    }
+
+    .data-flex {
+        grid-template-columns: 1fr;
     }
 }

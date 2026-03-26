@@ -1,0 +1,53 @@
+#values-section {
+    padding: 6rem 5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#values-section > span {
+    font-size: 1.75rem;
+    color: var(--red-900);
+    font-weight: 700;
+}
+
+#values-section > h2 {
+    margin-top: 0.4rem;
+}
+
+.values-grid {
+    margin-top: 2rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.value-card {
+    border: 1px solid var(--zinc-200);
+    border-radius: 0.75rem;
+    padding: 1.2rem;
+    background: #fff;
+    text-align: left;
+}
+
+.value-card h3 {
+    color: var(--neutral-900);
+    margin-bottom: 0.6rem;
+}
+
+.value-card p {
+    color: var(--neutral-700);
+    line-height: 1.5;
+}
+
+@media (max-width: 62.5rem) {
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #values-section {
+        padding: 5rem 1.25rem 0;
+    }
+}

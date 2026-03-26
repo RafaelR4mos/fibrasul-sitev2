@@ -35,31 +35,60 @@ var mainCarouselSectionIndex = 0;
 const cardInfo = [
     {
         id: 1,
-        title: "Laminação",
-        subtitle: "Algum subtitulo",
-        content:
-            "Realizamos revestimentos anti-corrosivos, soldas em tubulações de CPVC, PP, PEAD, além de fabricações e instalações em PRFV. Temos anos de experiência com serviços envolvendo compósitos",
+        title: "Andaime",
+        lead: "Serviços de andaimes como:",
+        items: [
+            "Montagem e desmontagem",
+            "Locação de andaime",
+            "Diferentes tipos de estrutura",
+        ],
     },
     {
         id: 2,
-        title: "Montagem de andaimes",
-        subtitle: "Algum subtitulo 2",
-        content:
-            "Iniciamos com a realização do projeto, memorial de cálculo e ART para que, somente então, seja realizada a montagem de andaimes com tubo roll, logo após, seguimos com procedimentos de validações de projeto com os clientes",
+        title: "Caldeiraria",
+        lead: "Serviços de caldeiraria como:",
+        items: [
+            "Estruturas metálicas",
+            "Tubulações em geral",
+            "Equipamentos (NR13)",
+        ],
     },
     {
         id: 3,
-        title: "Montagem de equipametos",
-        subtitle: "Algum subtitulo 3",
-        content:
-            "Iniciamos  com a realização de um projeto para a instalação de novos equipamentos. Iniciamos o procedimento de instalação juntamente com o procedimento de qualidade e constantes validações com os clientes.",
+        title: "Laminação",
+        lead: "Serviços de fibra como:",
+        items: [
+            "Soldagem de tubulações termoplásticas",
+            "Laminações de fibra de vidro",
+        ],
     },
     {
         id: 4,
-        title: "Montagem Eletromecânica",
-        subtitle: "Algum subtitulo 4",
-        content:
-            "Realizamos o projeto como um todo, envolvendo todas as equipes da Fibrasul e nossos parceiros. Primeiramente realizamos o projeto, logo após a fabricação, instalação dos equipamentos e durante o procedimento realizamos validações",
+        title: "Isolamento Térmico",
+        lead: "Serviços de isolamento como:",
+        items: ["Tubulações", "Tanques e vasos"],
+    },
+    {
+        id: 5,
+        title: "Pintura",
+        lead: "Serviços de pintura como:",
+        items: ["Tubulações", "Estruturas metálicas", "Tanques e vasos"],
+    },
+    {
+        id: 6,
+        title: "Civil",
+        lead: "Serviços de civil como:",
+        items: ["Bases civis", "Reparos e construções"],
+    },
+    {
+        id: 7,
+        title: "Elétrica",
+        lead: "Serviços de elétrica como:",
+        items: [
+            "Painéis elétricos",
+            "Luminárias",
+            "Ligamentos elétricos e infraestrutura",
+        ],
     },
 ];
 
@@ -77,9 +106,17 @@ function createCards(i) {
 function insertCardContent() {
     document.querySelectorAll(".card").forEach((elem, i) => {
         const cardTitle = cardInfo[i].title;
-        elem.querySelector(".card-title").innerText = cardTitle;
-        const cardContent = cardInfo[i].content;
-        elem.querySelector("p").innerText = cardContent;
+        elem.querySelector(".card-title h3").innerText = cardTitle;
+
+        elem.querySelector(".card-lead").innerText = cardInfo[i].lead;
+
+        const cardList = elem.querySelector(".card-list");
+        cardList.innerHTML = "";
+        cardInfo[i].items.forEach((item) => {
+            const li = document.createElement("li");
+            li.innerText = item;
+            cardList.appendChild(li);
+        });
     });
 }
 

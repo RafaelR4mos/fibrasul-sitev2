@@ -37,9 +37,15 @@
   background-color: var(--red-900);
   color: white;
   border-radius: 4px;
-  padding: 0.4rem 0.8rem;
-  width: 30%;
+  padding: 0.6rem 1rem;
+  width: fit-content;
+  min-width: 18rem;
   text-align: center;
+}
+
+.transparency-container > a:focus-visible {
+  outline: 3px solid var(--cyan-900);
+  outline-offset: 2px;
 }
 
 .transparency-container img {
@@ -59,6 +65,7 @@
 
   .transparency-container > a {
     font-size: 1rem;
+    min-width: 100%;
   }
 
   .transparency-container img {
